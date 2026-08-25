@@ -44,27 +44,25 @@ def delete_prompt(prompt_list):
 # [메인 함수] 프로그램의 전체 흐름
 def main():
     while True:
-        # 1. 메뉴 출력 부분 (여기서 3번 검색을 추가하고, 종료를 4번으로 바꿉니다)
-        print("\n--- 파이썬 프롬프트 관리자 ---")
-        print("1. 프롬프트 추가")
+               print("1. 프롬프트 추가")
         print("2. 프롬프트 목록 보기")
-        print("3. 프롬프트 검색")  # <--- 새로 추가된 줄
-        print("4. 종료")           # <--- 3번에서 4번으로 변경
+        print("3. 프롬프트 검색")
+        print("4. 프롬프트 삭제")  # 추가
+        print("5. 종료")           # 번호 변경
 
-        choice = input("\n메뉴를 선택하세요 (1~4): ") # (1~4)로 수정
+        choice = input("\n메뉴를 선택하세요 (1~5): ")
         
-        # 2. 선택에 따른 실행 부분 (elif choice == '3'을 추가합니다)
         if choice == '1':
             add_prompt(prompts)
         elif choice == '2':
             show_list(prompts)
-        elif choice == '3':        # <--- 새로 추가된 조건문
+        elif choice == '3':
             search_prompt(prompts)
-        elif choice == '4':        # <--- 3번에서 4번으로 변경
-            print("프로그램을 종료합니다. 이용해주셔서 감사합니다!")
+        elif choice == '4':        # 추가
+            delete_prompt(prompts)
+        elif choice == '5':        # 번호 변경
+            print("프로그램을 종료합니다.")
             break
-        else:
-            print("잘못된 선택입니다. 다시 입력해주세요.")
         
 # 프로그램 시작점
 if __name__ == "__main__":

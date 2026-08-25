@@ -42,3 +42,14 @@ def add_prompt(prompt_list):
 if choice == '1':
     add_prompt(prompts)
     main()
+def show_list(prompt_list):
+    print("\n--- 저장된 프롬프트 목록 ---")
+    if not prompt_list:
+        print("저장된 프롬프트가 없습니다.")
+    else:
+        for i, p in enumerate(prompt_list, 1):
+            print(f"{i}. {p}")
+
+# main 함수 안의 choice == '2' 부분 수정
+elif choice == '2':
+    show_list(prompts)

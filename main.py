@@ -13,7 +13,21 @@ def show_list(prompt_list):
 def search_prompt(prompt_list):
     keyword = input("검색할 단어를 입력하세요: ")
     found = [p for p in prompt_list if keyword in p]
-    
+    # [함수 4] 프롬프트 삭제 기능
+def delete_prompt(prompt_list):
+    show_list(prompt_list) # 목록을 먼저 보여줌
+    if not prompt_list:
+        return
+
+    try:
+        idx = int(input("\n삭제할 번호를 입력하세요: "))
+        if 1 <= idx <= len(prompt_list):
+            removed = prompt_list.pop(idx - 1)
+            print(f"[삭제 완료] '{removed[:10]}...' 항목이 삭제되었습니다.")
+        else:
+            print("[오류] 유효한 번호가 아닙니다.")
+    except ValueError:
+        print("[오류] 숫자만 입력해주세요.")
     print(f"\n--- '{keyword}' 검색 결과 ---")
     if not found:
         print("검색 결과가 없습니다.")

@@ -2,5 +2,10 @@
     {
         "title": "날씨가 어때",
         "content": "ㅇ러아리"
+    },
+    {
+        "title": "안녕",
+        "content": "오늘 날씨가 어때",
+        "favorite": true
     }
 ]

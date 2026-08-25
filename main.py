@@ -1,75 +1,80 @@
-"""
-프로그램명: 파이썬 프롬프트 관리자 (Prompt Manager)
-작성자: [본인 이름 또는 닉네임]
-버전: 1.0
-설명: 자주 사용하는 AI 프롬프트를 저장하고 관리하는 프로그램입니다.
-"""
-# 프롬프트를 저장할 빈 리스트
-prompts = []
+import json
+import os
 
-# [함수 1] 프롬프트 추가 기능
+# 1. 파일 이름 설정 (데이터가 저장될 파일)
+DB_FILE = "prompts.json"
+
+# 2. 파일에서 데이터 불러오는 함수
+def load_data():
+    if os.path.exists(DB_FILE): # 만약 파일이 있으면
+        with open(DB_FILE, "r", encoding="utf-8") as f:
+            return json.load(f) # 파일 내용을 읽어서 가져옴
+    return [] # 파일이 없으면 빈 리스트 반환
+
+# 3. 파일에 데이터를 저장하는 함수
+def save_data(prompts):
+    with open(DB_FILE, "w", encoding="utf-8") as f:
+        json.dump(prompts, f, ensure_ascii=False, indent=4)
+
+# [함수 1] 프롬프트 추가
 def add_prompt(prompt_list):
-    new_prompt = input("저장할 프롬프트를 입력하세요: ")
-    prompt_list.append(new_prompt)
-    print(f"\n[알림] '{new_prompt[:10]}...' 내용이 저장되었습니다.")
+    title = input("제목: ")
+    content = input("내용: ")
+    prompt_list.append({"title": title, "content": content})
+    save_data(prompt_list) # <--- 추가하자마자 파일에 저장!
+    print("✅ 저장되었습니다.")
 
-# [함수 2] 프롬프트 목록 보기 기능
+# [함수 2] 프롬프트 목록 보기
 def show_list(prompt_list):
-    # [함수 3] 프롬프트 검색 기능
-def search_prompt(prompt_list):
-    keyword = input("검색할 단어를 입력하세요: ")
-    found = [p for p in prompt_list if keyword in p]
-    # [함수 4] 프롬프트 삭제 기능
-def delete_prompt(prompt_list):
-    show_list(prompt_list) # 목록을 먼저 보여줌
     if not prompt_list:
+        print("비어 있습니다.")
         return
+    for i, p in enumerate(prompt_list):
+        print(f"{i+1}. {p['title']}")
 
+# [함수 3] 프롬프트 검색
+def search_prompt(prompt_list):
+    keyword = input("검색어: ")
+    for p in prompt_list:
+        if keyword in p['title'] or keyword in p['content']:
+            print(f"제목: {p['title']}\n내용: {p['content']}")
+
+# [함수 4] 프롬프트 삭제
+def delete_prompt(prompt_list):
+    show_list(prompt_list)
     try:
-        idx = int(input("\n삭제할 번호를 입력하세요: "))
-        if 1 <= idx <= len(prompt_list):
-            removed = prompt_list.pop(idx - 1)
-            print(f"[삭제 완료] '{removed[:10]}...' 항목이 삭제되었습니다.")
+        idx = int(input("삭제할 번호: ")) - 1
+        if 0 <= idx < len(prompt_list):
+            del prompt_list[idx]
+            save_data(prompt_list) # <--- 삭제하자마자 파일에 저장!
+            print("🗑️ 삭제되었습니다.")
         else:
-            print("[오류] 유효한 번호가 아닙니다.")
-    except ValueError:
-        print("[오류] 숫자만 입력해주세요.")
-    print(f"\n--- '{keyword}' 검색 결과 ---")
-    if not found:
-        print("검색 결과가 없습니다.")
-    else:
-        for i, p in enumerate(found, 1):
-            print(f"{i}. {p}")
-    print("\n--- 저장된 프롬프트 목록 ---")
-    if not prompt_list:
-        print("저장된 프롬프트가 없습니다.")
-    else:
-        for i, p in enumerate(prompt_list, 1):
-            print(f"{i}. {p}")
+            print("잘못된 번호입니다.")
+    except:
+        print("숫자를 입력해주세요.")
 
-# [메인 함수] 프로그램의 전체 흐름
+# 메인 실행부
 def main():
+    # 프로그램 시작할 때 파일에서 데이터를 불러옵니다.
+    prompts = load_data()
+    
     while True:
-               print("1. 프롬프트 추가")
-        print("2. 프롬프트 목록 보기")
-        print("3. 프롬프트 검색")
-        print("4. 프롬프트 삭제")  # 추가
-        print("5. 종료")           # 번호 변경
-
-        choice = input("\n메뉴를 선택하세요 (1~5): ")
+        print("\n--- 프롬프트 관리자 ---")
+        print("1. 추가, 2. 목록, 3. 검색, 4. 삭제, 5. 종료")
+        choice = input("선택: ")
         
-        if choice == '1':
+        if choice == "1":
             add_prompt(prompts)
-        elif choice == '2':
+        elif choice == "2":
             show_list(prompts)
-        elif choice == '3':
+        elif choice == "3":
             search_prompt(prompts)
-        elif choice == '4':        # 추가
+        elif choice == "4":
             delete_prompt(prompts)
-        elif choice == '5':        # 번호 변경
+        elif choice == "5":
             print("프로그램을 종료합니다.")
             break
-        
-# 프로그램 시작점
+
 if __name__ == "__main__":
     main()
+    

@@ -33,5 +33,12 @@ def main():
             print("\n[오류] 잘못된 선택입니다. 1~3 사이의 숫자를 입력해주세요.")
 
 if __name__ == "__main__":
+def add_prompt(prompt_list):
+    new_prompt = input("저장할 프롬프트를 입력하세요: ")
+    prompt_list.append(new_prompt)
+    print(f"\n[알림] '{new_prompt[:10]}...' 내용이 저장되었습니다.")
+
+# main 함수 안의 choice == '1' 부분은 아래처럼 수정
+if choice == '1':
+    add_prompt(prompts)
     main()
-    

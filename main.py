@@ -9,6 +9,17 @@ def add_prompt(prompt_list):
 
 # [함수 2] 프롬프트 목록 보기 기능
 def show_list(prompt_list):
+    # [함수 3] 프롬프트 검색 기능
+def search_prompt(prompt_list):
+    keyword = input("검색할 단어를 입력하세요: ")
+    found = [p for p in prompt_list if keyword in p]
+    
+    print(f"\n--- '{keyword}' 검색 결과 ---")
+    if not found:
+        print("검색 결과가 없습니다.")
+    else:
+        for i, p in enumerate(found, 1):
+            print(f"{i}. {p}")
     print("\n--- 저장된 프롬프트 목록 ---")
     if not prompt_list:
         print("저장된 프롬프트가 없습니다.")
@@ -39,4 +50,3 @@ def main():
 # 프로그램 시작점
 if __name__ == "__main__":
     main()
-    

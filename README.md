@@ -25,6 +25,11 @@ ChatGPT 등 AI 모델에게 사용할 나만의 프롬프트를 효율적으로 
 **prompts.json**: 프롬프트 데이터 저장 파일
 **README.md**: 프로젝트 설명서
 
+## Git Version 확인
+
+<img width="2120" height="552" alt="image" src="https://github.com/user-attachments/assets/ed5af914-f3b8-4870-b1da-8c34716aa6cc" />
+
+
 ## 프로그램 환경 설정 확인
 
 <img width="1080" height="474" alt="image" src="https://github.com/user-attachments/assets/7be93583-2be5-498d-a02b-0f508e2757bf" />

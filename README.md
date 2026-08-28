@@ -19,3 +19,15 @@ ChatGPT 등 AI 모델에게 사용할 나만의 프롬프트를 효율적으로 
 1. 저장소를 클론합니다.
    ```bash
    git clone [본인의 저장소 URL]
+
+
+## 프로그램 환경 설정 확인
+
+
+
+## 프로그램 실행
+<img width="1106" height="806" alt="image" src="https://github.com/user-attachments/assets/a8124196-7d1a-47ba-b795-24b49b0f6504" />
+<img width="1096" height="442" alt="image" src="https://github.com/user-attachments/assets/300c2fd3-f54e-44c1-bf9a-24c9438c2871" />
+<img width="1108" height="1018" alt="image" src="https://github.com/user-attachments/assets/94ed2a19-babb-455d-b597-216443dc806f" />
+<img width="1102" height="398" alt="image" src="https://github.com/user-attachments/assets/4b75e3b4-bdce-415b-a498-1f8f926bcd12" />
+

@@ -18,7 +18,7 @@ ChatGPT 등 AI 모델에게 사용할 나만의 프롬프트를 효율적으로 
 ## 💻 실행 방법
 1. 저장소를 클론합니다.
    ```bash
-   git clone [본인의 저장소 URL]
+   https://github.com/sy05kim/prompt_manager.git
 
 ## 📂 파일 구조
 **main.py**: 프로그램 메인 로직 및 메뉴 인터페이스

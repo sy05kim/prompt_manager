@@ -22,7 +22,9 @@ ChatGPT 등 AI 모델에게 사용할 나만의 프롬프트를 효율적으로 
 
 ## 📂 파일 구조
 **main.py**: 프로그램 메인 로직 및 메뉴 인터페이스
+
 **prompts.json**: 프롬프트 데이터 저장 파일
+
 **README.md**: 프로젝트 설명서
 
 ## Git Version 확인
@@ -41,15 +43,33 @@ ChatGPT 등 AI 모델에게 사용할 나만의 프롬프트를 효율적으로 
 
 ## 프로그램 실행
 <img width="1106" height="806" alt="image" src="https://github.com/user-attachments/assets/a8124196-7d1a-47ba-b795-24b49b0f6504" />
+<img width="1098" height="318" alt="image" src="https://github.com/user-attachments/assets/a8e32a31-7062-4448-85cb-c9926e75bad5" />
 <img width="1096" height="442" alt="image" src="https://github.com/user-attachments/assets/300c2fd3-f54e-44c1-bf9a-24c9438c2871" />
 <img width="1108" height="1018" alt="image" src="https://github.com/user-attachments/assets/94ed2a19-babb-455d-b597-216443dc806f" />
 <img width="1102" height="398" alt="image" src="https://github.com/user-attachments/assets/4b75e3b4-bdce-415b-a498-1f8f926bcd12" />
 
 ## Git 커밋 히스토리
 
+### 🌿 브랜치 관리 및 워크플로우 실습
+- `feature` 브랜치에서 기능을 개발하고 `main` 브랜치에 병합(Merge)하는 과정을 실습했습니다
+
 <img width="1104" height="1276" alt="image" src="https://github.com/user-attachments/assets/fef78e12-777d-438a-a081-ec9f0da26815" />
 
 ## Git clone 로그
 
 <img width="1120" height="342" alt="image" src="https://github.com/user-attachments/assets/61645769-c0fd-476d-9269-82c094352695" />
+
+## 🛠 트러블슈팅 (Troubleshooting)
+
+### 1. 함수 인자 전달 오류 (TypeError)
+- **문제**: 메뉴에서 '추가' 기능을 선택했을 때 `TypeError: add_prompt() takes 0 positional arguments but 1 was given` 에러 발생.
+- **원인**: `main()` 함수에서 `add_prompt(prompts)`와 같이 데이터를 전달하며 호출했으나, 실제 함수 정의부(`def add_prompt()`)에서는 매개변수를 받도록 설정되어 있지 않아 발생한 불일치 문제.
+- **해결**: 함수 정의 시 매개변수를 추가하여 리스트 데이터를 정상적으로 전달받도록 수정하였습니다.
+  ```python
+  # 수정 전
+  def add_prompt():
+  
+  # 수정 후
+  def add_prompt(prompts):
+
 

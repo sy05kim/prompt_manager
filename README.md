@@ -20,9 +20,18 @@ ChatGPT 등 AI 모델에게 사용할 나만의 프롬프트를 효율적으로 
    ```bash
    git clone [본인의 저장소 URL]
 
+## 📂 파일 구조
+**main.py**: 프로그램 메인 로직 및 메뉴 인터페이스
+**prompts.json**: 프롬프트 데이터 저장 파일
+**README.md**: 프로젝트 설명서
 
 ## 프로그램 환경 설정 확인
 
+<img width="1080" height="474" alt="image" src="https://github.com/user-attachments/assets/7be93583-2be5-498d-a02b-0f508e2757bf" />
+
+## JSON 파일 데이터
+
+<img width="2136" height="894" alt="image" src="https://github.com/user-attachments/assets/9b5f4669-ace1-43b6-9f37-7d65d46ac8bf" />
 
 
 ## 프로그램 실행
@@ -30,4 +39,12 @@ ChatGPT 등 AI 모델에게 사용할 나만의 프롬프트를 효율적으로 
 <img width="1096" height="442" alt="image" src="https://github.com/user-attachments/assets/300c2fd3-f54e-44c1-bf9a-24c9438c2871" />
 <img width="1108" height="1018" alt="image" src="https://github.com/user-attachments/assets/94ed2a19-babb-455d-b597-216443dc806f" />
 <img width="1102" height="398" alt="image" src="https://github.com/user-attachments/assets/4b75e3b4-bdce-415b-a498-1f8f926bcd12" />
+
+## Git 커밋 히스토리
+
+<img width="1104" height="1276" alt="image" src="https://github.com/user-attachments/assets/fef78e12-777d-438a-a081-ec9f0da26815" />
+
+## Git clone 로그
+
+<img width="1120" height="342" alt="image" src="https://github.com/user-attachments/assets/61645769-c0fd-476d-9269-82c094352695" />
 
